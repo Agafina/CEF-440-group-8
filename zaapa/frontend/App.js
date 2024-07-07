@@ -2,108 +2,67 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './pages/HomeScreen';
+import RoadSignList from './pages/RoadSignList';
 import NavigationScreen from './pages/NavigationScreen';
+import RoadStateUpdate from './pages/RoadStateUpdate';
+import { View, StyleSheet } from 'react-native'
+import DestinationDetails from './components/DestinationDetails';
+import Settings from './pages/Settings';
+import Profile from './pages/Profile';
+import NotifPref from './pages/NotifPref';
+import LoginPage from './pages/LoginPage';
+import UpdatePassword from './pages/UpdatePassword';
+import LearnPage from './pages/LearnPage';
+import SavedLocations from './pages/SavedLocations';
+import PassForgotEmail from './pages/PassForgotEmail';
+import PassForgotPhone from './pages/PassForgotPhone';
+import GuidePageOne from './pages/GuidePageOne';
+import GuidePageTwo from './pages/GuidePageTwo';
+import GuidePageThree from './pages/GuidePageThree';
+import Navbar from './components/Navbar';
+import SuccessPage from './components/SuccessPage';
+
+
+
+
 
 const Stack = createStackNavigator();
-// import { NavigationContainer} from '@react-navigation/native'; 
-// import { createStackNavigator } from '@react-navigation/stack';
-// import  Settings  from './pages/Settings';
-// import  UpdatePassword  from './pages/UpdatePassword';
-// import  CreateNewPassword  from './pages/CreateNewPassword';
-// import  PassForgotEmail  from './pages/PassForgotEmail';
-// import  PassForgotPhone  from './pages/PassForgotPhone';
-// import  Profile  from './pages/Profile';
-// import  SavedLocations  from './pages/SavedLocations';
 
-// import  RegistrationForm  from './components/RegistrationForm';
-
-
-// import Navigator from './routes/homeStack';
-
-// import { StatusBar } from 'expo-status-bar';
-// import { View, StyleSheet, } from 'react-native';
-// import RegisterPage from './pages/RegisterPage';
-// import LoginPage from './pages/LoginPage';
-// import GuidePageOne from './pages/GuidePageOne';
-// import GuidePageTwo from './pages/GuidePageTwo';
-// import GuidePageThree from './pages/GuidePageThree';
-// import RoadStateUpdate from './pages/RoadStateUpdate';
-// import LearnPage from './pages/LearnPage';
-// import RoadSignList from './pages/RoadSignList';
-// import NotifPref from './pages/NotifPref';
-
-
-
-
-
-// const Stack = createStackNavigator();
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+    <>
+      <NavigationContainer>
+      <Stack.Navigator initialRouteName="LoginPage">
+        <Stack.Screen name="Settings" options={{ headerShown:false }} component={Settings} />
+        <Stack.Screen name="Profile" options={{ headerShown:false }} component={Profile} />
+        <Stack.Screen name="NotifPref" options={{ headerShown:false }} component={NotifPref} />
+        <Stack.Screen name="LearnPage" options={{ headerShown:false }} component={LearnPage} />
+        <Stack.Screen name="SavedLocations" options={{ headerShown:false }} component={SavedLocations} />
+        <Stack.Screen name="PassForgotEmail" options={{ headerShown:false }} component={PassForgotEmail} />
+        <Stack.Screen name="PassForgotPhone" options={{ headerShown:false }} component={PassForgotPhone} />
+        <Stack.Screen name="GuidePageOne" options={{ headerShown:false }} component={GuidePageOne} />
+        <Stack.Screen name="GuidePageTwo" options={{ headerShown:false }} component={GuidePageTwo} />
+        <Stack.Screen name="GuidePageThree" options={{ headerShown:false }} component={GuidePageThree} />
+        <Stack.Screen name="UpdatePassword" options={{ headerShown:false }} component={UpdatePassword} />
+        <Stack.Screen name="LoginPage" options={{ headerShown:false }} component={LoginPage} />
         <Stack.Screen name="Home" options={{ headerShown:false }} component={HomeScreen} />
         <Stack.Screen name="Navigation" options={{ headerShown:false }} component={NavigationScreen} />
+        <Stack.Screen name="Navbar" options={{ headerShown:false }} component={Navbar} />
+        <Stack.Screen name="SuccessPage" options={{ headerShown:false }} component={SuccessPage} />
       </Stack.Navigator>
     </NavigationContainer>
+
+      {/* <View style={{backgroundColor: 'red', flex: 1}}>
+      <DestinationDetails />
+      </View> */}
+
+      {/* <View style={{backgroundColor: 'red', flex: 1}}>
+        <NavigationScreen />
+      </View> */}
+
+      {/* <LoginPage/> */}
+      {/* <CreateNewPassword/> */}
+    </>
   );
 }
-//     <View style={styles.container}>
-//     <LoginPage />
-    {/* <LearnPage /> */}
-    {/* <NotifPref /> */}
-    {/* <RegistrationForm /> */}
-    {/* <RegisterPage /> */}
-    {/* <GuidePageOne /> */}
-    {/* <GuidePageTwo /> */}
-    {/* <GuidePageThree /> */}
-    {/* <RoadStateUpdate /> */}
-    {/* <SavedLocations /> */}
-    {/* <Profile /> */}
-    {/* <PassForgotPhone /> */}
-    {/* <PassForgotEmail /> */}
-    {/* <CreateNewPassword /> */}
-    {/* <UpdatePassword /> */}
-    {/* <Settings /> */}
-    {/* <RoadSignList /> */}
-//     <StatusBar style="auto" />
-//   </View>
-// );
-// }
-    // <Navigator/>
-    // <NavigationContainer>
-    //   <Stack.Navigator
-    //     initialRouteName= 'Settings'
-    //   >
-    //     <Stack.Screen
-    //       name= 'Settings'
-    //       component= {Settings}
-    //       options={{
-    //         headerShown:false
-    //       }}
-    //     />
-    //    <Stack.Screen
-    //       name= 'Profile'
-    //       component= {Profile}
-    //       options={{
-    //         headerShown:false
-    //       }}
-    //     />
-    //     <Stack.Screen
-    //       name= 'UpdatePassword'
-    //       component= {UpdatePassword}
-    //       options={{
-    //         headerShown:false
-    //       }}
-    //     />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-    
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingVertical: 50,
-    paddingHorizontal: 15,
-
-  },
-});
